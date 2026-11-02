@@ -1,25 +1,25 @@
 pipeline {
     agent any
+    
     tools {
-	jdk 'jdk21'	
-} 
+        jdk 'jdk17' // This MUST exactly match the Name you typed in the Tools step above
+    }
 
     stages {
         stage('Pull Code') {
             steps {
-                // Code is automatically pulled if configured via 'Pipeline from SCM'
                 echo 'Pulling code from GitHub...'
             }
         }
         stage('Compile Java') {
             steps {
-                echo 'Compiling HelloWorld.java...'
+                echo 'Compiling Hello.java...'
                 sh 'javac Hello.java'
             }
         }
         stage('Execute Application') {
             steps {
-                echo 'Running HelloWorld...'
+                echo 'Running Hello...'
                 sh 'java Hello'
             }
         }
@@ -33,3 +33,4 @@ pipeline {
         }
     }
 }
+
