@@ -1,5 +1,8 @@
 pipeline {
-    agent any 
+    agent any
+    tools {
+	jdk 'jdk21'	
+} 
 
     stages {
         stage('Pull Code') {
