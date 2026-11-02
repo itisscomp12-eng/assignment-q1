@@ -1,9 +1,5 @@
 pipeline {
-    agent any
-    
-    tools {
-        jdk 'jdk17' // This MUST exactly match the Name you typed in the Tools step above
-    }
+    agent any 
 
     stages {
         stage('Pull Code') {
